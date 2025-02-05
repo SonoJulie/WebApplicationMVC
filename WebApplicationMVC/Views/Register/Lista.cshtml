@@ -1,0 +1,37 @@
+﻿@model WebApplicationMVC.Models.ListModel
+
+<table class="table-bordered">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Cognome
+        </th>
+        <th>
+            Età
+        </th>
+        <th>
+            Sex
+        </th>
+    </tr>
+   
+    @foreach(var contatto in Model.Contatti)
+    { 
+        <tr> 
+          <td>
+              @contatto.Nome
+          </td>
+          <td>
+              @contatto.Cognome
+          </td>
+          <td>
+              @contatto.Eta
+          </td>
+          <td>
+              @Model.Generi.First(x => x.Id == contatto.Sesso).Nome
+          </td>
+        </tr>
+      }
+    
+</table>

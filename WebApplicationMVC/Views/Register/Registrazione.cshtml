@@ -1,0 +1,24 @@
+﻿@model WebApplicationMVC.Models.ContattoModel
+
+<div class="col-md-9 offset-2">
+    <form asp-action="Registrazione" asp-controller="Register" method="post">
+        <label class="form-label">
+            Nome:
+        </label>
+        <input asp-for="Nome" class="form-control"/>
+        <label class="form-label">
+            Cognome:
+        </label>
+        <input asp-for="Cognome" class="form-control"/>
+        <label class="form-label">
+            Età:
+        </label>
+        <input asp-for="Eta" class="form-control" />
+        @Html.DropDownListFor(model => model.Sesso, 
+            Model.Generi.Select(x => new SelectListItem() { Text = x.Nome, Value = x.Id.ToString() }), 
+            "-- seleziona --", htmlAttributes: new { @class = "form-control", @id="dropSex" })
+       
+        <br />
+        <button type="submit" class="btn-danger" >Registrati</button>
+    </form>
+</div>

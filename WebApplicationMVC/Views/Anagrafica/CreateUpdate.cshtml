@@ -1,0 +1,37 @@
+﻿@model Model.Anagrafica.AnagraficaInputModel
+
+<h1>Registrazione nuovo cliente</h1>
+
+<form asp-action="CreateUpdate" asp-controller="Anagrafica" method="post">
+
+    <label class="form-label">Nome:</label>
+    <input asp-for="Nome" class="form-control" />
+
+    <label class="form-label">Cognome:</label>
+    <input asp-for="Cognome" class="form-control" />
+
+    <label class="form-label">Età:</label>
+    <input asp-for="Eta" class="form-control" />
+
+    <label class="form-label">Peso attuale:</label>
+    <input asp-for="PesoAttuale" class="form-control" />
+
+    <label class="form-label">Altezza:</label>
+    <input asp-for="Altezza" class="form-control" />
+
+    <label class="form-label">Genere:</label>
+    @Html.DropDownListFor(model => model.IdGenere, Model.Generi.Select(x => new SelectListItem() { Text = x.Genere, Value = x.Id.ToString() }),
+            "-- seleziona --", htmlAttributes: new { @class = "form-control" })
+
+
+    <label class="form-label">Consenso alla privacy:</label>
+    <input type="checkbox" asp-for="ConsensoPrivacy" class="form-check-input" />
+
+    <br />
+    <label class="form-label">Note:</label>
+    <textarea asp-for="Note" class="form-control" ></textarea>
+
+
+    <br />
+    <button type="submit" class="btn-success">Registra</button>
+</form>
