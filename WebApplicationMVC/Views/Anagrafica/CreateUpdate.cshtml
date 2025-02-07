@@ -2,6 +2,13 @@
 
 <h1>Registrazione nuovo cliente</h1>
 
+@if(!Model.Output.Success)
+{
+    <div class="alert alert-danger" role="alert">
+       @Model.Output.ErrorMessage
+    </div>
+}
+
 <form asp-action="CreateUpdate" asp-controller="Anagrafica" method="post">
 
     <label class="form-label">Nome:</label>

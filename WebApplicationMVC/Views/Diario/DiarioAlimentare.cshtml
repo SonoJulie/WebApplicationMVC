@@ -1,0 +1,65 @@
+﻿@model Model.Diario.DiarioAlimentareModel
+
+<h1>Diario Alimentare di @Model.Anagrafica.Nome @Model.Anagrafica.Cognome</h1>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>@Model.Anagrafica.Nome @Model.Anagrafica.Cognome</h2>
+        <br />
+        <p>
+            <b>Età: </b> @Model.Anagrafica.Eta 
+        </p>
+        <br />
+        <p>
+            <b>Peso iniziale: </b>@Model.PesoIniziale
+        </p>
+        <br />
+        <p>
+            <b>Altezza iniziale: </b>@Model.AltezzaIniziale
+        </p>
+    </div>
+
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    Data Registrazione
+                </th>
+                <th>
+                    Peso
+                </th>
+                <th>
+                    Altezza
+                </th>
+                <th>
+                    %
+                </th>
+            </tr>
+            @foreach (var check in Model.Diario)
+            {
+               <tr>
+                   <td>
+                       @check.DataRegistrazione
+                   </td>
+                   <td>
+                       @check.Peso
+                   </td>
+                   <td>
+                       @check.Altezza
+                   </td>
+                   <td>
+
+                   </td>
+               </tr>
+            }
+
+
+        </table>
+    </div>
+    <div class="col-md-2">
+        <a class="btn btn-dark">
+            +
+        </a>
+    </div>
+</div>

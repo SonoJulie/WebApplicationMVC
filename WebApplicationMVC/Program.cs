@@ -11,11 +11,10 @@ builder.Services.AddDbContext<WebAcademyContext>(options =>
 );
 
 builder.Services.AddControllersWithViews();
-// Add services to the container.
-builder.Services.AddControllersWithViews();
+
 
 builder.Services.AddScoped<AnagraficaService>();
-
+builder.Services.AddScoped<DiarioService>();
 
 var app = builder.Build();
 

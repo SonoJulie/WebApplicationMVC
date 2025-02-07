@@ -20,6 +20,8 @@
 
         public List<GenereDTO> Generi { get; set; } = new List<GenereDTO>();
 
+        public BaseOutput Output { get; set; } = new BaseOutput() { Success = true};
+
     }
 
 
