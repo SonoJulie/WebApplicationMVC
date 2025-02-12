@@ -12,6 +12,7 @@ namespace WebApplicationMVC.Controllers
                 };
 
         [HttpGet]
+
         public IActionResult Registrazione()
         {
             ContattoModel model = new ContattoModel()
